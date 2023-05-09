@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CarController;
+use App\Http\Controllers\MotorcycleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +29,9 @@ Route::group([
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('refresh', [AuthController::class, 'refresh']);
     Route::get('me', [AuthController::class, 'me']);
+});
+
+Route::middleware('auth:api')->group(function() {
+    Route::resource('cars', CarController::class);
+    Route::resource('motorcycles', MotorcycleController::class);
 });
