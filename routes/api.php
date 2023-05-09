@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\MotorcycleController;
+use App\Http\Controllers\SalesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +28,7 @@ Route::group([
     'prefix' => 'auth'
 ], function ($router) {
     Route::post('login', [AuthController::class, 'login']);
+    Route::post('register', [AuthController::class, 'register']);
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('refresh', [AuthController::class, 'refresh']);
     Route::get('me', [AuthController::class, 'me']);
@@ -34,4 +37,6 @@ Route::group([
 Route::middleware('auth:api')->group(function() {
     Route::resource('cars', CarController::class);
     Route::resource('motorcycles', MotorcycleController::class);
+    Route::resource('inventories', InventoryController::class);
+    Route::resource('sales', SalesController::class);
 });

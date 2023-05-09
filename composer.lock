@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b34c8d5bc2006e86178e3f6a245a8e33",
+    "content-hash": "76add56d0ff6b2dd9c0ecf08d1747dfa",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2441,6 +2441,82 @@
             "time": "2023-03-03T20:12:38+00:00"
         },
         {
+            "name": "mehdi-fathi/eloquent-filter",
+            "version": "3.3.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mehdi-fathi/eloquent-filter.git",
+                "reference": "8e8067f3760a0ce0eca5a64ce8e75820f3bc2d05"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mehdi-fathi/eloquent-filter/zipball/8e8067f3760a0ce0eca5a64ce8e75820f3bc2d05",
+                "reference": "8e8067f3760a0ce0eca5a64ce8e75820f3bc2d05",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "~8.0|~9.0|~10.0",
+                "illuminate/database": "~8.0|~9.0|~10.0",
+                "illuminate/pagination": "~8.0|~9.0|~10.0",
+                "illuminate/support": "~8.0|~9.0|~10.0",
+                "php": "^8.0|^8.1|^8.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "1.4.x-dev|1.4.2|1.5.1",
+                "orchestra/testbench": "5.*|^6.0|^6.6.0|^7.0.0",
+                "phpstan/phpstan": "^1.8",
+                "phpunit/phpunit": "8.3|8.5|9.3|^9.5"
+            },
+            "type": "lib",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "eloquentFilter\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "EloquentFilter": "eloquentFilter\\Facade\\EloquentFilter"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "eloquentFilter\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mehdi Fathi",
+                    "email": "mehdifathi.developer@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Eloquent Filter adds custom filters automatically to your Eloquent Models in Laravel.It's easy to use and fully dynamic, just with sending the Query Strings to it.",
+            "homepage": "https://github.com/mehdi-fathi/eloquent-filter",
+            "keywords": [
+                "dynamic-filters",
+                "eloquent",
+                "eloquent filter",
+                "filter",
+                "laravel",
+                "laravel filter",
+                "laravel filter multiple parameters",
+                "laravel query filter",
+                "laravel tools",
+                "query",
+                "query-filter",
+                "search"
+            ],
+            "support": {
+                "issues": "https://github.com/mehdi-fathi/eloquent-filter/issues",
+                "source": "https://github.com/mehdi-fathi/eloquent-filter/tree/3.3.9"
+            },
+            "time": "2023-05-07T15:20:03+00:00"
+        },
+        {
             "name": "mobiledetect/mobiledetectlib",
             "version": "2.8.41",
             "source": {
@@ -4008,6 +4084,77 @@
                 }
             ],
             "time": "2023-04-15T23:01:58+00:00"
+        },
+        {
+            "name": "spatie/laravel-query-builder",
+            "version": "4.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-query-builder.git",
+                "reference": "fa289437588dfce89c72a16515113f3bade0590b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-query-builder/zipball/fa289437588dfce89c72a16515113f3bade0590b",
+                "reference": "fa289437588dfce89c72a16515113f3bade0590b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^6.20.13|^7.30.4|^8.22.2",
+                "illuminate/http": "^6.20.13|^7.30.4|^8.22.2",
+                "illuminate/support": "^6.20.13|^7.30.4|^8.22.2",
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "laravel/legacy-factories": "^1.0.4",
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^4.9|^5.8|^6.3",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\QueryBuilder\\QueryBuilderServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\QueryBuilder\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Vanderbist",
+                    "email": "alex@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easily build Eloquent queries from API requests",
+            "homepage": "https://github.com/spatie/laravel-query-builder",
+            "keywords": [
+                "laravel-query-builder",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-query-builder/issues",
+                "source": "https://github.com/spatie/laravel-query-builder"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2022-11-28T13:50:55+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -8998,7 +9145,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "tymon/jwt-auth": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

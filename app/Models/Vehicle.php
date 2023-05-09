@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Jenssegers\Mongodb\Eloquent\Model;
 
+/**
+ * @method static find(mixed $get)
+ */
 class Vehicle extends Model
 {
     use HasFactory;
@@ -21,5 +24,9 @@ class Vehicle extends Model
 
     public function vehicleable() {
         return $this->morphTo();
+    }
+
+    public function inventory() {
+        return $this->hasOne(Inventory::class);
     }
 }

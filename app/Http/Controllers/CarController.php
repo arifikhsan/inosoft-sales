@@ -99,7 +99,7 @@ class CarController extends Controller
     public function destroy(Car $car): Response
     {
         $car->vehicle->delete();
-        Car::destroy($car->id);
+        $car->delete();
 
         return response()->noContent();
     }

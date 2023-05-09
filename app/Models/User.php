@@ -11,6 +11,9 @@ use Laravel\Sanctum\HasApiTokens;
 use Jenssegers\Mongodb\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
+/**
+ * @method static create(array|\Illuminate\Contracts\Foundation\Application|\Illuminate\Http\Request|string|null $userParams)
+ */
 class User extends Authenticatable implements JWTSubject
 {
     use HasApiTokens;

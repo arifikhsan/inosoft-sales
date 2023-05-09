@@ -98,7 +98,7 @@ class MotorcycleController extends Controller
     public function destroy(Motorcycle $motorcycle): Response
     {
         $motorcycle->vehicle->delete();
-        Motorcycle::destroy($motorcycle->id);
+        $motorcycle->delete();
 
         return response()->noContent();
     }
