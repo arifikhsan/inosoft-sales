@@ -5,6 +5,7 @@ use App\Http\Controllers\CarController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\MotorcycleController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\VehicleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -39,4 +40,5 @@ Route::middleware('auth:api')->group(function() {
     Route::resource('motorcycles', MotorcycleController::class);
     Route::resource('inventories', InventoryController::class);
     Route::resource('sales', SalesController::class);
+    Route::resource('vehicles', VehicleController::class);
 });

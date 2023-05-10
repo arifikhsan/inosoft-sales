@@ -3,16 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sale;
-use App\Models\Vehicle;
+use App\Service\SalesService;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Spatie\QueryBuilder\AllowedFilter;
-use Spatie\QueryBuilder\QueryBuilder;
 
 class SalesController extends Controller
 {
+    protected $salesService;
+
+    public function __construct(
+        SalesService $salesService
+    )
+    {
+        $this->salesService = $salesService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -20,10 +27,7 @@ class SalesController extends Controller
      */
     public function index()
     {
-        if (request()->query->has('vehicle_id')) {
-            return Sale::where(['vehicle_id' => request()->query->get('vehicle_id')])->get();
-        }
-        return Sale::all();
+        return $this->salesService->getAll(request());
     }
 
     /**
@@ -34,16 +38,7 @@ class SalesController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
-        $vehicle = Vehicle::find($request->get('vehicle_id'));
-
-        if ($request->get('quantity') > $vehicle->inventory->quantity) {
-            return response()->json(['message' => 'Not enough in stock'], 422);
-        }
-
-        $saleParams = $request->only(['vehicle_id', 'price', 'quantity', 'customer_name']);
-        $saleParams['total'] = $request->get('price') * $request->get('quantity');
-
-        return response()->json(Sale::create($saleParams));
+        return $this->salesService->create($request);
     }
 
     /**
@@ -66,28 +61,7 @@ class SalesController extends Controller
      */
     public function update(Request $request, Sale $sale): Sale
     {
-        if ($request->has('vehicle_id')) {
-            $sale->vehicle_id = $request->get('vehicle_id');
-        }
-
-        if ($request->has('price')) {
-            $sale->price = $request->get('price');
-        }
-
-        if ($request->has('quantity')) {
-            $sale->quantity = $request->get('quantity');
-        }
-
-        if ($request->has('total')) {
-            $sale->total = $request->get('total');
-        }
-
-        if ($request->has('customer_name')) {
-            $sale->customer_name = $request->get('customer_name');
-        }
-
-        $sale->save();
-        return $sale;
+        return $this->salesService->update($request, $sale);
     }
 
     /**
@@ -98,7 +72,7 @@ class SalesController extends Controller
      */
     public function destroy(Sale $sale): Response
     {
-        $sale->delete();
+        $this->salesService->delete($sale);
 
         return response()->noContent();
     }

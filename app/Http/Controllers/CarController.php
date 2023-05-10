@@ -3,12 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\car;
+use App\Service\CarService;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class CarController extends Controller
 {
+    protected $carService;
+
+    public function __construct(
+        CarService $carService
+    ) {
+        $this->carService = $carService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +25,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        return Car::all();
+        return $this->carService->getAll();
     }
 
     /**
@@ -27,14 +36,7 @@ class CarController extends Controller
      */
     public function store(Request $request): Car
     {
-
-        $carParams = $request->only(['engine', 'passenger_capacity', 'type']);
-        $vehicleParams = $request->only(['production_year', 'color', 'price']);
-
-        $car = Car::create($carParams);
-        $car->vehicle()->create($vehicleParams);
-
-        return $car;
+        return $this->carService->create($request);
     }
 
     /**
@@ -57,37 +59,7 @@ class CarController extends Controller
      */
     public function update(Request $request, Car $car): Car
     {
-        if ($request->has('passenger_capacity')) {
-            $car->passenger_capacity = $request->get('passenger_capacity');
-        }
-
-        if ($request->has('engine')) {
-            $car->engine = $request->get('engine');
-        }
-
-        if ($request->has('type')) {
-            $car->type = $request->get('type');
-        }
-
-        $car->save();
-
-        $vehicle = $car->vehicle;
-
-        if ($request->has('production_year')) {
-            $vehicle->production_year = $request->get('production_year');
-        }
-
-        if ($request->has('color')) {
-            $vehicle->color = $request->get('color');
-        }
-
-        if ($request->has('price')) {
-            $vehicle->price = $request->get('price');
-        }
-
-        $vehicle->save();
-
-        return $car;
+        return $this->carService->update($request, $car);
     }
 
     /**
@@ -98,8 +70,7 @@ class CarController extends Controller
      */
     public function destroy(Car $car): Response
     {
-        $car->vehicle->delete();
-        $car->delete();
+        $this->carService->delete($car);
 
         return response()->noContent();
     }

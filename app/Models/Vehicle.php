@@ -7,6 +7,7 @@ use Jenssegers\Mongodb\Eloquent\Model;
 
 /**
  * @method static find(mixed $get)
+ * @method static create($attributes)
  */
 class Vehicle extends Model
 {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Inventory;
+use App\Service\InventoryService;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -10,6 +11,15 @@ use Illuminate\Http\Response;
 
 class InventoryController extends Controller
 {
+    protected $inventoryService;
+
+    public function __construct(
+        InventoryService $inventoryService
+    )
+    {
+        $this->inventoryService = $inventoryService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +27,7 @@ class InventoryController extends Controller
      */
     public function index()
     {
-        return Inventory::all();
+        return $this->inventoryService->getAll();
     }
 
     /**
@@ -28,13 +38,7 @@ class InventoryController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
-        if (Inventory::where(['vehicle_id' => $request->get('vehicle_id')])->exists()) {
-            return response()->json(['message' => 'Inventory already exists'], 422);
-        }
-
-        $inventoryParams = $request->only(['vehicle_id', 'quantity']);
-
-        return response()->json(Inventory::create($inventoryParams));
+        return $this->inventoryService->create($request);
     }
 
     /**
@@ -57,12 +61,7 @@ class InventoryController extends Controller
      */
     public function update(Request $request, Inventory $inventory): Inventory
     {
-        if ($request->has('quantity')) {
-            $inventory->quantity = $request->get('quantity');
-        }
-
-        $inventory->save();
-        return $inventory;
+        return $this->inventoryService->update($request, $inventory);
     }
 
     /**
@@ -73,7 +72,7 @@ class InventoryController extends Controller
      */
     public function destroy(Inventory $inventory): Response
     {
-        $inventory->delete();
+        $this->inventoryService->delete($inventory);
 
         return response()->noContent();
     }
