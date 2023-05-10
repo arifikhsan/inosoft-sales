@@ -40,5 +40,5 @@ Route::middleware('auth:api')->group(function() {
     Route::resource('motorcycles', MotorcycleController::class);
     Route::resource('inventories', InventoryController::class);
     Route::resource('sales', SalesController::class);
-    Route::resource('vehicles', VehicleController::class);
+    Route::resource('vehicles', VehicleController::class)->only(['index', 'show']);
 });

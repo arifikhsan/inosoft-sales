@@ -179,6 +179,7 @@ return [
 
         Jenssegers\Mongodb\MongodbServiceProvider::class,
         // Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+        Jenssegers\Mongodb\MongodbQueueServiceProvider::class,
 
     ],
 

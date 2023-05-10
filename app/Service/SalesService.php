@@ -2,6 +2,7 @@
 
 namespace App\Service;
 use App\Models\Sale;
+use App\Repository\InventoryRepository;
 use App\Repository\SalesRepository;
 use App\Repository\VehicleRepository;
 use Illuminate\Http\JsonResponse;
@@ -41,7 +42,10 @@ class SalesService
         $saleParams = $request->only(['vehicle_id', 'price', 'quantity', 'customer_name']);
         $saleParams['total'] = $request->get('price') * $request->get('quantity');
 
-        return response()->json($this->salesRepository->create($saleParams));
+        $newQuantity = $vehicle->inventory->quantity - $request->get('quantity');
+        $vehicle->inventory()->update(['quantity' => $newQuantity]);
+
+        return response()->json($this->salesRepository->create($saleParams), 201);
     }
 
     public function update(Request $request, Sale $sale): Sale

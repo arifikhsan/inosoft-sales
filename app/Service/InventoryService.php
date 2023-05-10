@@ -31,7 +31,7 @@ class InventoryService
 
         $inventoryParams = $request->only(['vehicle_id', 'quantity']);
 
-        return response()->json(Inventory::create($inventoryParams));
+        return response()->json(Inventory::create($inventoryParams), 201);
     }
 
     public function update(Request $request, Inventory $inventory): Inventory
