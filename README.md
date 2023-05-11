@@ -66,7 +66,7 @@ Install dan jalankan MongoDB menggunakan docker:
 
 13. ✅ Melihat stok kendaraan 
 
-<img width="1552" alt="Screenshot 2023-05-11 at 10 48 11" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/ea27cc0f-9f7e-4b3c-be67-555663e65fa9">
+<img width="1552" alt="Screenshot 2023-05-11 at 10 33 55" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/f356c0fc-d030-49f4-9f3f-9e780b08f086">
 
 14. Mencatat penjualan kendaraan
 
