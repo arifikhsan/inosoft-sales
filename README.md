@@ -46,49 +46,49 @@ Install dan jalankan MongoDB menggunakan docker:
 
 8. Daftar akun baru
 
-<img width="1552" alt="Screenshot 2023-05-11 at 10 29 17" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/aa65628f-c7a9-4618-a5fa-6e451b7a6158">
+<img width="1552" alt="Screenshot 2023-05-11 at 10 29 17" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/4441e34d-1e2a-4e39-9997-bc70d1852e3f">
 
 9. Login dengan akun yang sudah terdaftar
 
-<img width="1552" alt="Screenshot 2023-05-11 at 10 30 36" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/def880b6-d8e5-4926-9f7f-4aa09ddbd0e6">
+<img width="1552" alt="Screenshot 2023-05-11 at 10 30 36" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/50ec871c-5d7f-4631-bfaf-d6397b21d135">
 
 10. Buat kendaraan baru (mobil)
 
-<img width="1552" alt="Screenshot 2023-05-11 at 10 31 53" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/7aed920f-2236-408d-8aef-b966f886f159">
+<img width="1552" alt="Screenshot 2023-05-11 at 10 31 53" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/c7996645-01b4-4237-8531-f596be8d3e1b">
 
 11. Lihat semua kendaraan
 
-<img width="1552" alt="Screenshot 2023-05-11 at 10 32 58" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/7ec4c484-8b49-4db7-bd99-d9f01228e8c4">
+<img width="1552" alt="Screenshot 2023-05-11 at 10 32 58" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/bd69cd0f-518b-43e4-810d-e5e6177ec00a">
 
 12. Masukan stok
 
-<img width="1552" alt="Screenshot 2023-05-11 at 10 33 55" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/5c735f02-c2c8-41d6-be2a-870353bd56d5">
+<img width="1552" alt="Screenshot 2023-05-11 at 10 33 55" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/e8706819-3615-423f-ae4e-8b8afe11ec2f">
 
 13. ✅ Melihat stok kendaraan 
 
-<img width="1552" alt="Screenshot 2023-05-11 at 10 33 55" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/f356c0fc-d030-49f4-9f3f-9e780b08f086">
+<img width="1552" alt="Screenshot 2023-05-11 at 11 01 55" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/b944627b-b51f-45fe-aaa8-b70ae18e33fe">
 
 14. Mencatat penjualan kendaraan
 
-<img width="1552" alt="Screenshot 2023-05-11 at 10 36 13" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/219519fd-9b14-47f4-bf3d-e4f35d66efd6">
+<img width="1552" alt="Screenshot 2023-05-11 at 10 36 13" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/10815788-96b2-4caf-a694-8766c187ab49">
 
 15. ✅ Melihat semua penjualan kendaraan
 
-<img width="1552" alt="Screenshot 2023-05-11 at 10 49 45" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/93d56344-4556-48b6-ae5c-11bbf11c0adb">
+<img width="1552" alt="Screenshot 2023-05-11 at 11 03 28" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/444548c9-10fc-493b-9558-18d59535239d">
 
 16. ✅ Melihat laporan penjualan per kendaraan
 
-<img width="1552" alt="Screenshot 2023-05-11 at 10 39 35" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/57ac0d66-f868-4adf-bdb7-2e3be3d21756">
+<img width="1552" alt="Screenshot 2023-05-11 at 10 39 35" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/a5bb4815-e04b-4279-b815-576e30fabc6c">
 
 Karena mobil sudah dibeli dua unit, maka stoknya tinggal 98:
 
-<img width="1552" alt="Screenshot 2023-05-11 at 10 53 04" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/f4749f25-79b8-4a31-bb4a-86af2e80b3f7">
+<img width="1552" alt="Screenshot 2023-05-11 at 10 53 04" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/faaf6494-5396-4523-8aad-15c70d54703f">
 
 ## Petunjuk menjalankan unit test
 
 1. Buat database di MongoDB dengan nama `inosoft_sales_test`
 2. jalankan test dengan `php artisan test`
 
-<img width="328" alt="Screenshot 2023-05-11 at 10 41 14" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/ca7873e1-1604-4abc-a9aa-e63f371167b0">
+<img width="328" alt="Screenshot 2023-05-11 at 10 41 14" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/da11a8ea-b0b6-43e2-81f8-66f008028107">
 
 
