@@ -42,7 +42,7 @@ Install dan jalankan MongoDB menggunakan docker:
 6. Download postman collection pada link berikut: https://www.postman.com/arifikhsan/workspace/inosoft-sales
 7. Ubah environment menjadi `development`
 
-<img width="300" alt="Screenshot 2023-05-11 at 10 20 32" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/729c65f5-f9e9-4ee5-841f-065d7ec7028a">
+<img width="300" alt="Screenshot 2023-05-11 at 10 20 32" src="https://github.com/arifikhsan/inosoft-sales/assets/32485694/81ac2d88-dd45-480e-a159-66e666ccad54">
 
 8. Daftar akun baru
 
