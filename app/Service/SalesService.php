@@ -25,7 +25,7 @@ class SalesService
     public function getAll(Request $request)
     {
         if ($request->query->has('vehicle_id')) {
-            return $this->salesRepository->findWhereVehicleId('vehicle_id');
+            return $this->salesRepository->findWhereVehicleId($request->get('vehicle_id'));
         }
 
         return $this->salesRepository->getAll();
